@@ -12,13 +12,17 @@ int fib(int a[],int k,int n)
   fib_small=0;
   fib_mid=1;
   fibmax=fib_mid+fib_small;
+  cout<<fib_small<<" "<<fib_mid<<" "<<fibmax;
   
   while(fibmax<n)
   {
     fib_small=fib_mid;
     fib_mid=fibmax;
     fibmax=fib_mid+fib_small;
+    cout<<" "<<fibmax;
   }
+  cout<<endl;
+  cout<<"fibonacci last no :"<<fibmax<<endl;
   
   
   int offset=-1;
@@ -26,6 +30,7 @@ int fib(int a[],int k,int n)
   while(fibmax>1)
   {
     int i=min(offset+fib_mid,n-1);
+    cout<<"iteration indexes :"<<i<<endl;
     
     if(a[i]<k)
     {
@@ -55,11 +60,12 @@ int main()
   int b[]={2,5,7,13,21,28,31};
   int l;
   l=sizeof(b)/sizeof(b[0]);
-  int q=7;
+  int q=28;
   int result=fib(b,q,l);
   if(result>=0)
   {
-    cout<<"found at "<<result<<endl;
+    cout<<"--------------------"<<endl;
+    cout<<"element found at=> "<<result<<endl;
   }
   else
   {
